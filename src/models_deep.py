@@ -22,6 +22,10 @@ MAX_STEPS = 400
 def _run(model_cls, train: pd.DataFrame, future: pd.DataFrame, h: int, **kw) -> pd.DataFrame:
     cutoff = train["ds"].max()
     t = train[train["ds"] > cutoff - pd.Timedelta(days=HISTORY_DAYS)][["unique_id", "ds", "y"]]
+    # series shorter than the input window cannot be trained on: forecast them with their recent mean
+    n = t.groupby("unique_id")["y"].transform("size")
+    short = t[n < 4 * h + h]
+    t = t[n >= 4 * h + h]
     model = model_cls(h=h, input_size=4 * h, loss=MSE(), scaler_type="standard", max_steps=MAX_STEPS,
                       batch_size=64, windows_batch_size=512, random_seed=1,
                       enable_progress_bar=False, enable_model_summary=False, logger=False,
@@ -30,6 +34,11 @@ def _run(model_cls, train: pd.DataFrame, future: pd.DataFrame, h: int, **kw) -> 
     nf.fit(df=t)
     fc = nf.predict().rename(columns={model_cls.__name__: "yhat"})
     fc["yhat"] = fc["yhat"].clip(lower=0)
+    if len(short):
+        recent = short.sort_values("ds").groupby("unique_id").tail(h).groupby("unique_id")["y"].mean()
+        fb = pd.DataFrame({"unique_id": recent.index}).merge(future[["unique_id", "ds"]], on="unique_id")
+        fb["yhat"] = fb["unique_id"].map(recent)
+        fc = pd.concat([fc[["unique_id", "ds", "yhat"]], fb])
     return future[["unique_id", "ds"]].merge(fc[["unique_id", "ds", "yhat"]], on=["unique_id", "ds"], how="left")
 
 

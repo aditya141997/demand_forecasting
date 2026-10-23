@@ -21,6 +21,13 @@ def _stats_model(model, train: pd.DataFrame, future: pd.DataFrame, h: int) -> pd
     fc = fc.rename(columns={name: "yhat"})
     fc["yhat"] = fc["yhat"].clip(lower=0)
     out = future[["unique_id", "ds"]].merge(fc[["unique_id", "ds", "yhat"]], on=["unique_id", "ds"], how="left")
+    # very new items can come back without a forecast: fall back to the mean of their last h days
+    missing = out["yhat"].isna()
+    if missing.any():
+        recent = t.sort_values("ds").groupby("unique_id").tail(h).groupby("unique_id")["y"].mean()
+        out.loc[missing, "yhat"] = out.loc[missing, "unique_id"].map(recent)
+        out["yhat"] = out["yhat"].fillna(0.0)
+        print(f"    {type(model).__name__}: fallback for {out.loc[missing, 'unique_id'].nunique()} series")
     return out
 
 

@@ -105,6 +105,11 @@ def run(models: list[str], n_folds: int, h: int) -> None:
                 if c not in pred:
                     pred[c] = np.nan
             res = test[["unique_id", "ds", "y"]].merge(pred, on=["unique_id", "ds"], how="left")
+            # cold start: an item first stocked inside the test window has no history, so no model can forecast it
+            cold = res["yhat"].isna() & ~res["unique_id"].isin(train["unique_id"].unique())
+            if cold.any():
+                print(f"    {name}: {res.loc[cold, 'unique_id'].nunique()} series without history -> forecast 0")
+                res.loc[cold, "yhat"] = 0.0
             assert res["yhat"].notna().all(), f"{name} returned no forecast for some series/days"
             res.insert(1, "cutoff", cutoff)
             res.insert(3, "model", name)
