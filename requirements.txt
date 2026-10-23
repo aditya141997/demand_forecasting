@@ -1,0 +1,12 @@
+﻿# Python 3.11.2  (py -3.11 -m venv .venv)
+pandas
+numpy
+pyarrow
+statsforecast
+lightgbm
+neuralforecast
+chronos-forecasting
+hierarchicalforecast
+mapie
+streamlit
+plotly

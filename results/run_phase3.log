@@ -1,0 +1,36 @@
+﻿.\.venv\Scripts\python : C:\demand_forecasting\.venv\Lib\site-packages\statsforecast\arima.py:2355: UserWarning: 
+Stepwise search was stopped early due to reaching the model number limit: nmodels=94
+At line:1 char:328
++ ... orecasting; .\.venv\Scripts\python src\backtest.py --folds 5 *> resul ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\demand_forec...mit: nmodels=94:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  warnings.warn(
+C:\demand_forecasting\.venv\Lib\site-packages\statsforecast\arima.py:2355: UserWarning: Stepwise search was stopped 
+early due to reaching the model number limit: nmodels=94
+  warnings.warn(
+C:\demand_forecasting\.venv\Lib\site-packages\statsforecast\arima.py:2355: UserWarning: Stepwise search was stopped 
+early due to reaching the model number limit: nmodels=94
+  warnings.warn(
+500 series | cutoffs: ['2016-01-03', '2016-01-31', '2016-02-28', '2016-03-27', '2016-04-24'] | h=28
+  skip   SeasonalNaive      2016-01-03 (already done)
+  done   AutoETS            2016-01-03    20.3s  rows=14,000
+  done   AutoARIMA          2016-01-03   463.7s  rows=14,000
+  done   LightGBM           2016-01-03     4.8s  rows=14,000
+  skip   SeasonalNaive      2016-01-31 (already done)
+  done   AutoETS            2016-01-31    21.6s  rows=14,000
+  done   AutoARIMA          2016-01-31   477.6s  rows=14,000
+  done   LightGBM           2016-01-31     4.5s  rows=14,000
+  skip   SeasonalNaive      2016-02-28 (already done)
+  done   AutoETS            2016-02-28    19.5s  rows=14,000
+  done   AutoARIMA          2016-02-28   511.8s  rows=14,000
+  done   LightGBM           2016-02-28     4.6s  rows=14,000
+  skip   SeasonalNaive      2016-03-27 (already done)
+  done   AutoETS            2016-03-27    21.1s  rows=14,000
+  done   AutoARIMA          2016-03-27   498.0s  rows=14,000
+  done   LightGBM           2016-03-27     4.8s  rows=14,000
+  skip   SeasonalNaive      2016-04-24 (already done)
+  skip   AutoETS            2016-04-24 (already done)
+  skip   AutoARIMA          2016-04-24 (already done)
+  skip   LightGBM           2016-04-24 (already done)

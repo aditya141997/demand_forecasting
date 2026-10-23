@@ -1,0 +1,11 @@
+﻿500 series | cutoffs: ['2016-01-03', '2016-01-31', '2016-02-28', '2016-03-27', '2016-04-24'] | h=28
+  done   N-HiTS             2016-01-03    35.1s  rows=14,000
+  done   PatchTST           2016-01-03   228.9s  rows=14,000
+  done   N-HiTS             2016-01-31    35.4s  rows=14,000
+  done   PatchTST           2016-01-31   248.3s  rows=14,000
+  done   N-HiTS             2016-02-28    35.2s  rows=14,000
+  done   PatchTST           2016-02-28   230.7s  rows=14,000
+  done   N-HiTS             2016-03-27    35.2s  rows=14,000
+  done   PatchTST           2016-03-27   232.2s  rows=14,000
+  skip   N-HiTS             2016-04-24 (already done)
+  skip   PatchTST           2016-04-24 (already done)

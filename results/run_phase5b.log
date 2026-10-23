@@ -1,0 +1,6 @@
+500 series | cutoffs: ['2016-01-03', '2016-01-31', '2016-02-28', '2016-03-27', '2016-04-24'] | h=28
+  done   Chronos_finetuned  2016-01-03   322.8s  rows=14,000
+  done   Chronos_finetuned  2016-01-31   309.3s  rows=14,000
+  done   Chronos_finetuned  2016-02-28   329.2s  rows=14,000
+  done   Chronos_finetuned  2016-03-27   318.4s  rows=14,000
+  done   Chronos_finetuned  2016-04-24   327.0s  rows=14,000

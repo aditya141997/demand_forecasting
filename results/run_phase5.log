@@ -1,0 +1,49 @@
+﻿500 series | cutoffs: ['2016-01-03', '2016-01-31', '2016-02-28', '2016-03-27', '2016-04-24'] | h=28
+.\.venv\Scripts\python : 
+At line:1 char:328
++ ... orecasting; .\.venv\Scripts\python src\backtest.py --models Chronos_z ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Loading weights:   0%|          | 0/143 [00:00<?, ?it/s]
+Loading weights:  33%|███▎      | 47/143 [00:00<00:00, 456.33it/s]
+Loading weights: 100%|██████████| 143/143 [00:00<00:00, 1140.48it/s]
+  done   Chronos_zeroshot   2016-01-03     6.5s  rows=14,000
+
+Loading weights:   0%|          | 0/143 [00:00<?, ?it/s]
+Loading weights:  31%|███       | 44/143 [00:00<00:00, 418.74it/s]
+Loading weights: 100%|██████████| 143/143 [00:00<00:00, 1090.94it/s]
+  done   Chronos_finetuned  2016-01-03   290.9s  rows=14,000
+
+Loading weights:   0%|          | 0/143 [00:00<?, ?it/s]
+Loading weights:  29%|██▊       | 41/143 [00:00<00:00, 395.91it/s]
+Loading weights: 100%|██████████| 143/143 [00:00<00:00, 1270.46it/s]
+  done   Chronos_zeroshot   2016-01-31     6.3s  rows=14,000
+
+Loading weights:   0%|          | 0/143 [00:00<?, ?it/s]
+Loading weights:  31%|███▏      | 45/143 [00:00<00:00, 428.57it/s]
+Loading weights: 100%|██████████| 143/143 [00:00<00:00, 1238.00it/s]
+  done   Chronos_finetuned  2016-01-31   297.3s  rows=14,000
+
+Loading weights:   0%|          | 0/143 [00:00<?, ?it/s]
+Loading weights:  39%|███▉      | 56/143 [00:00<00:00, 555.17it/s]
+Loading weights: 100%|██████████| 143/143 [00:00<00:00, 1096.60it/s]
+  done   Chronos_zeroshot   2016-02-28     6.9s  rows=14,000
+
+Loading weights:   0%|          | 0/143 [00:00<?, ?it/s]
+Loading weights:  32%|███▏      | 46/143 [00:00<00:00, 458.12it/s]
+Loading weights: 100%|██████████| 143/143 [00:00<00:00, 1072.99it/s]
+  done   Chronos_finetuned  2016-02-28   311.0s  rows=14,000
+
+Loading weights:   0%|          | 0/143 [00:00<?, ?it/s]
+Loading weights:  30%|███       | 43/143 [00:00<00:00, 427.78it/s]
+Loading weights: 100%|██████████| 143/143 [00:00<00:00, 1095.28it/s]
+  done   Chronos_zeroshot   2016-03-27     7.0s  rows=14,000
+
+Loading weights:   0%|          | 0/143 [00:00<?, ?it/s]
+Loading weights:  37%|███▋      | 53/143 [00:00<00:00, 529.22it/s]
+Loading weights: 100%|██████████| 143/143 [00:00<00:00, 1051.61it/s]
+  done   Chronos_finetuned  2016-03-27   321.3s  rows=14,000
+  skip   Chronos_zeroshot   2016-04-24 (already done)
+  skip   Chronos_finetuned  2016-04-24 (already done)
